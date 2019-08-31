@@ -2,6 +2,7 @@ $(() => {
 
     $("#submitForm").on('click', (e) => {
         e.preventDefault();
+        $("#submitForm").attr("disabled", true);
 
         let name = $.trim($("#name").val());
         let email = $.trim($("#email").val());
@@ -19,7 +20,7 @@ $(() => {
 
         console.log(branch, role_team, github_link, linkedin_link);
         
-        const url = `https://docs.google.com/forms/d/e/1FAIpQLSe4dsJ-fveIk-iTZ25cSlzSuFi31sslGXZXECDn8KfVULzrJQ/formResponse?usp=pp_url&entry.1821348361=${name}&entry.1663120441=${email}&entry.609147553=${mobile}&entry.113314376=${branch}&entry.1370152404=${role_team}&entry.2061758602=${q1}&entry.1973063140=${q2}&entry.1609758082=${q3}&entry.1892787611=${resume_link}`;
+        const url = `docs.google.com/forms/d/e/1FAIpQLSe4dsJ-fveIk-iTZ25cSlzSuFi31sslGXZXECDn8KfVULzrJQ/formResponse?usp=pp_url&entry.1821348361=${name}&entry.1663120441=${email}&entry.609147553=${mobile}&entry.113314376=${branch}&entry.1370152404=${role_team}&entry.2061758602=${q1}&entry.1973063140=${q2}&entry.1609758082=${q3}&entry.1892787611=${resume_link}`;
         console.log(url);
         // try {
         //     fetch(url, {
@@ -39,8 +40,8 @@ $(() => {
         
         
         $.ajax({
-            url: url,
-            method: 'POST',
+            url: 'https://cors-anywhere.herokuapp.com/'+url,
+            method: 'GET',
             cors: true,
             secure: true,
             success: function(data) {
@@ -55,6 +56,7 @@ $(() => {
                 });
             },
             error: function(err) {
+                $("#submitForm").attr("disabled", false);
                 console.log(err);
                 $.toast({
                     heading: 'Error',
