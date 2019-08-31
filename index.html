@@ -3,50 +3,21 @@
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png" />
-	<link rel="icon" type="image/png" href="assets/img/favicon.png" />
-	<title>FY Representative</title>
+	<link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicon.ico" />
+	<link rel="icon" type="image/png" href="assets/img/favicon.ico" />
+	<title>KJSCE CodeCell | FY Representative</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
 
-	<!-- Canonical SEO -->
-    <link rel="canonical" href="https://www.creative-tim.com/product/paper-bootstrap-wizard"/>
-
-    <meta name="keywords" content="wizard, bootstrap wizard, creative tim, long forms, 3 step wizard, sign up wizard, beautiful wizard, long forms wizard, wizard with validation, paper design, paper wizard bootstrap, bootstrap paper wizard">
-    <meta name="description" content="Paper Bootstrap Wizard is a fully responsive wizard that is inspired by our famous Paper Kit  and comes with 3 useful examples and 5 colors.">
-
-    <!-- Schema.org markup for Google+ -->
-    <meta itemprop="name" content="Paper Bootstrap Wizard by Creative Tim">
-    <meta itemprop="description" content="Paper Bootstrap Wizard is a fully responsive wizard that is inspired by our famous Paper Kit  and comes with 3 useful examples and 5 colors.">
-    <meta itemprop="image" content="https://s3.amazonaws.com/creativetim_bucket/products/49/opt_pbw_thumbnail.jpg">
-
-    <!-- Twitter Card data -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@creativetim">
-    <meta name="twitter:title" content="Paper Bootstrap Wizard by Creative Tim">
-    <meta name="twitter:description" content="Paper Bootstrap Wizard is a fully responsive wizard that is inspired by our famous Paper Kit  and comes with 3 useful examples and 5 colors.">
-    <meta name="twitter:creator" content="@creativetim">
-    <meta name="twitter:image" content="https://s3.amazonaws.com/creativetim_bucket/products/49/opt_pbw_thumbnail.jpg">
-
-    <!-- Open Graph data -->
-    <meta property="og:title" content="Paper Bootstrap Wizard by Creative Tim | Free Boostrap Wizard" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://demos.creative-tim.com/paper-bootstrap-wizard/wizard-list-place.html" />
-    <meta property="og:image" content="https://s3.amazonaws.com/creativetim_bucket/products/49/opt_pbw_thumbnail.jpg" />
-    <meta property="og:description" content="Paper Bootstrap Wizard is a fully responsive wizard that is inspired by our famous Paper Kit  and comes with 3 useful examples and 5 colors." />
-    <meta property="og:site_name" content="Creative Tim" />
 
 	<!-- CSS Files -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
 	<link href="assets/css/paper-bootstrap-wizard.css" rel="stylesheet" />
 
-	<!-- CSS Just for demo purpose, don't include it in your project -->
-	<link href="assets/css/demo.css" rel="stylesheet" />
-
 	<!-- Fonts and Icons -->
     <link href="https://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet">
-	<link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
 	<link href="assets/css/themify-icons.css" rel="stylesheet">
 	<!-- Google Tag Manager -->
 	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -60,6 +31,15 @@
 	<style>
 		.form-control {
 			border: 1px solid #c2c2c2 !important;
+			font-size: 16px !important;
+		}
+
+		.info-text {
+			font-size: 2rem !important;
+		}
+
+		label {
+			font-size: 1.5rem !important;
 		}
 	</style>
 	</head>
@@ -69,11 +49,11 @@
 	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKDMSK6"
 	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<!-- End Google Tag Manager (noscript) -->
-	<div class="image-container set-full-height" style="background-image: url('assets/img/paper-1.jpeg')">
+	<div class="image-container set-full-height" style="background-image: linear-gradient(-90deg,#2BACB5, #3498DB);">
 	    <!--   Big container   -->
 	    <div class="container">
 	        <div class="row">
-		        <div class="col-sm-8 col-sm-offset-2">
+		        <div class="col-sm-10 col-sm-offset-1">
 
 		            <!--      Wizard container        -->
 		            <div class="wizard-container">
@@ -83,7 +63,7 @@
 		                <!--        You can switch " data-color="orange" "  with one of the next bright colors: "blue", "green", "orange", "red", "azure"          -->
 
 		                    	<div class="wizard-header text-center">
-		                        	<h3 class="wizard-title">Enter your basic details</h3>
+		                        	<h3 class="wizard-title">Register for FY Representative</h3>
 		                    	</div>
 
 								<div class="wizard-navigation">
@@ -102,7 +82,7 @@
 			                            <li>
 											<a href="#account" data-toggle="tab">
 												<div class="icon-circle">
-													<i class="ti-settings"></i>
+													<i class="ti-pencil"></i>
 												</div>
 												Question 1
 											</a>
@@ -110,7 +90,7 @@
 			                            <li>
 											<a href="#challenge" data-toggle="tab">
 												<div class="icon-circle">
-													<i class="ti-map"></i>
+													<i class="ti-pencil"></i>
 												</div>
 												Question 2
 											</a>
@@ -118,7 +98,7 @@
 										<li>
 											<a href="#team" data-toggle="tab">
 												<div class="icon-circle">
-													<i class="ti-map"></i>
+													<i class="ti-pencil"></i>
 												</div>
 												Question 3
 											</a>
@@ -131,14 +111,26 @@
 											<h5 class="info-text"> Please tell us more about yourself.</h5>
 											<div class="col-sm-10 col-sm-offset-1">
 												<div class="form-group bordered">
-													<label>Name <small>(required)</small></label>
-													<input name="name" type="text" class="form-control" placeholder="Enter name">
+													<label style="font-size: 1.5rem;">Name <small>(required)</small></label>
+													<input name="name" type="text" class="form-control" placeholder="Enter name" required>
 												</div>
 											</div>
 											<div class="col-sm-10 col-sm-offset-1">
 												<div class="form-group">
 													<label>Email <small>(required)</small></label>
-													<input name="email" type="email" class="form-control" placeholder="Enter email address">
+													<input name="email" type="email" class="form-control" placeholder="Enter email address" required>
+												</div>
+											</div>
+											<div class="col-sm-10 col-sm-offset-1">
+												<div class="form-group">
+													<label>Mobile Number</label>
+													<input name="mobile" type="text" class="form-control" placeholder="Enter mobile number" required>
+												</div>
+											</div>
+											<div class="col-sm-10 col-sm-offset-1">
+												<div class="form-group">
+													<label>Branch</label>
+													<input name="branch" type="text" class="form-control" placeholder="Enter branch" required>
 												</div>
 											</div>
 										</div>
@@ -146,13 +138,13 @@
 									
 									<!-- Question 1 -->
 		                            <div class="tab-pane" id="account">
-		                                <h5 class="info-text">Why do you want to be accepted to CodeCell, and why should we choose you? <br>
+		                                <h5 class="info-text" >Why do you want to join CodeCell, and why should we choose you? <br>
 											<span style="font-size: 70%;">Please note that we regard a well-written letter of motivation very highly when reviewing applications.</span>
 										</h5>
 		                                <div class="row">
 		                                    <div class="col-sm-12">
 												<div class="form-group">
-													<textarea class="form-control" id="reason" rows="8" required></textarea>
+													<textarea class="form-control" id="reason" rows="12" required></textarea>
 												</div>
 											</div>
 		                                </div>
@@ -160,12 +152,12 @@
 
 									<!-- Question 2 -->
 									<div class="tab-pane" id="challenge">
-										<h5 class="info-text">What is the hardest challenge that you have overcome ?
+										<h5 class="info-text" >What is the hardest challenge that you have overcome ?
 										</h5>
 										<div class="row">
 											<div class="col-sm-12">
 												<div class="form-group">
-													<textarea class="form-control" name="hardest_challenge" id="hardest_challenge" rows="8" required></textarea>
+													<textarea class="form-control" name="hardest_challenge" id="hardest_challenge" rows="12" required></textarea>
 												</div>
 											</div>
 										</div>
@@ -173,12 +165,12 @@
 
 									<!-- Question 3 -->
 									<div class="tab-pane" id="team">
-										<h5 class="info-text">What is the hardest challenge that you have faced as a team ?
+										<h5 class="info-text" >What is the hardest challenge that you have faced as a team ?
 										</h5>
 										<div class="row">
 											<div class="col-sm-12">
 												<div class="form-group">
-													<textarea class="form-control" name="hardest_team" id="hardest_team" rows="8" required></textarea>
+													<textarea class="form-control" name="hardest_team" id="hardest_team" rows="12" required></textarea>
 												</div>
 											</div>
 										</div>
@@ -187,7 +179,7 @@
 		                        <div class="wizard-footer">
 		                            <div class="pull-right">
 		                                <input type='button' class='btn btn-next btn-fill btn-wd' name='next' value='Next' style="background-color: #68B3C8; color: white; border: 1px solid #68B3C8;" />
-		                                <input type='button' class='btn btn-finish btn-fill btn-wd' name='finish' value='Finish' />
+		                                <input type='button' class='btn btn-finish btn-fill btn-wd' name='finish' value='Finish' style="background-color: #68B3C8; color: white; border: 1px solid #68B3C8;" />
 		                            </div>
 
 		                            <div class="pull-left">
@@ -204,7 +196,7 @@
 
 	    <div class="footer">
 	        <div class="container text-center">
-	            Made with <i class="fa fa-heart heart"></i> by <a href="https://www.creative-tim.com">Creative Tim</a>. Free download <a href="https://www.creative-tim.com/product/paper-bootstrap-wizard">here.</a>
+	            Made with <i class="fa fa-heart heart"></i> by KJSCE CodeCell</a>
 	        </div>
 	    </div>
 
