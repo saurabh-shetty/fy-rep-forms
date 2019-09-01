@@ -118,39 +118,39 @@
 											<div class="col-sm-10 col-sm-offset-1">
 												<div class="form-group bordered">
 													<label style="font-size: 1.5rem;">Name <small>(required)</small></label>
-													<input type="text" id="name" class="form-control" placeholder="Enter name" required>
+													<input type="text" id="name" name="name" class="form-control" placeholder="Enter name" required>
 												</div>
 											</div>
 											<div class="col-sm-10 col-sm-offset-1">
 												<div class="form-group">
 													<label>Email <small>(required)</small></label>
-													<input type="email" id="email" class="form-control" placeholder="Enter email address" required>
+													<input type="email" id="email" name="email" class="form-control" placeholder="Enter email address" required>
 												</div>
 											</div>
 											<div class="col-sm-10 col-sm-offset-1">
 												<div class="form-group">
 													<label>Mobile Number</label>
-													<input type="text" id="mobile" class="form-control" placeholder="Enter mobile number" required>
+													<input type="text" id="mobile" name="mobile" class="form-control" placeholder="Enter mobile number" required>
 												</div>
 											</div>
 											<div class="col-sm-3 col-sm-offset-1">
-												
+
 												<div class="form-group">
 													<label>Branch</label>
-													<select id="branch" class="form-control">
-														<option>Select Branch</option>
+													<select id="branch" class="form-control" name="branch" required>
+														<option value="">Select Branch</option>
 														<option value="COMPS">COMPS</option>
 														<option value="IT">IT</option>
 														<option value="ETRX">ETRX</option>
 														<option value="E">EXTC</option>
 														<option value="ETRX">MECH</option>
-													</select>	
+													</select>
 													<!-- <input type="text"class="form-control" placeholder="Enter branch" required> -->
 												</div>
 											</div>
 											<div class="col-sm-10 col-sm-offset-1">
 												<div class="form-group">
-													<label>Position Preference <small>(Creative, Tech, Cord)</small></label>
+													<label>Position Preference <small>(Creative, Tech, Cord)</small> <small>(required)</small></label>
 													<!-- <select id="role_team" class="form-control" multiple="multiple">
 														<option selected>Select position as per preference</option>
 														<option value="Creative">Creative</option>
@@ -163,7 +163,7 @@
 											<div class="col-sm-10 col-sm-offset-1">
 												<div class="form-group">
 													<label>Resume <small>(Google Drive link)</small></label>
-													<input type="url" id="resume" class="form-control" placeholder="Enter resume link" required>
+													<input type="url" id="resume" name="resume" class="form-control" placeholder="Enter resume link" required>
 												</div>
 											</div>
 											<div class="col-sm-10 col-sm-offset-1">
@@ -180,7 +180,7 @@
 											</div>
 										</div>
 									</div>
-									
+
 									<!-- Question 1 -->
 		                            <div class="tab-pane" id="account">
 		                                <h5 class="info-text" >Why do you want to join CodeCell, and why should we choose you? <br>

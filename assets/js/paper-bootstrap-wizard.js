@@ -54,7 +54,23 @@ transparent = true;
         		    },
         		    email: {
         		      required: true
-        		    }
+                    },
+                    mobile: {
+                        required: true,
+                        minlength: 10
+                    },
+                    branch: {
+                        required: "Please select a branch",
+                    },
+                    role_team: {
+                        required: true,
+                        minlength: 3
+                    },
+                    resume: {
+                        required: true,
+                        minlength: 3
+                    }
+
                 },
         	});
 
@@ -65,7 +81,8 @@ transparent = true;
                 'previousSelector': '.btn-previous',
 
                 onNext: function(tab, navigation, index) {
-                	var $valid = $('.wizard-card form').valid();
+                    var $valid = $('.wizard-card form').valid();
+                    console.log($valid);
                 	if(!$valid) {
                 		$validator.focusInvalid();
                 		return false;
