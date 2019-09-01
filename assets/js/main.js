@@ -19,7 +19,14 @@ $(() => {
 
         console.log(branch, role_team, github_link, linkedin_link);
 
-        const url = `docs.google.com/forms/d/e/1FAIpQLSe4dsJ-fveIk-iTZ25cSlzSuFi31sslGXZXECDn8KfVULzrJQ/formResponse?usp=pp_url&entry.1821348361=${name}&entry.1663120441=${email}&entry.609147553=${mobile}&entry.113314376=${branch}&entry.1370152404=${role_team}&entry.2061758602=${q1}&entry.1973063140=${q2}&entry.1609758082=${q3}&entry.1892787611=${resume_link}&submit=Submit`;
+        let url = `docs.google.com/forms/d/e/1FAIpQLSe4dsJ-fveIk-iTZ25cSlzSuFi31sslGXZXECDn8KfVULzrJQ/formResponse?usp=pp_url&entry.1821348361=${name}&entry.1663120441=${email}&entry.609147553=${mobile}&entry.113314376=${branch}&entry.1370152404=${role_team}&entry.1892787611=${resume_link}`;
+        if (github_link) {
+            url = url + `&entry.1245110826=${github_link}`;
+        }
+        if (linkedin_link) {
+            url = url + `&entry.1787624373=${linkedin_link}`;
+        }
+        url = url + `&entry.2061758602=${q1}&entry.1973063140=${q2}&entry.1609758082=${q3}&submit=Submit`;
         console.log(url);
         // try {
         //     fetch(url, {
