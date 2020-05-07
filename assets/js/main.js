@@ -5,11 +5,9 @@ $(() => {
         if (year === "FY") {
             $(".posdiv").show();
             $(".sy").hide();
-            $(".coordinator").removeClass("col-sm-offset-5");
         } else if (year === "SY") {
             $(".posdiv").show();
             $(".sy").show();
-            $(".coordinator").addClass("col-sm-offset-5");
         } else {
             $(".posdiv").hide();
         }
