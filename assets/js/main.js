@@ -1,3 +1,6 @@
+function sleepAWhile(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
 $(() => {
     $(".posdiv").hide();
     $("#year").on("change", () => {
@@ -128,7 +131,10 @@ $(() => {
                 }
             })
             .finally(() => {
-                $("#submitForm").attr("disabled", false);
+                // sleepAWhile(5000).then(()=>{
+                //     $("#submitForm").attr("disabled", false);
+                // })
+                
             });
         // try {
         //     fetch(url, {
