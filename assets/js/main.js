@@ -53,7 +53,7 @@ $(() => {
             return false;
         }
         $("#submitForm").attr("disabled", true);
-        let urlInit = `https://docs.google.com/forms/d/e/1FAIpQLSfo0eMdfNz9TJRD9SpsRb5s3wUF_r54qBSp8DiqBnlQqBjGFw/viewform?usp=pp_url&entry.1698873613=${email}&entry.1060656156=${name}&entry.1143253914=${mobile}&entry.1156550514=${year}&entry.1553288753=${branch}&entry.1416789219=${positions}&entry.1089965806=${resume_link}&entry.809758529=${cover_link}&entry.887347889=${codechef_link}&entry.903534579=${github_link}&entry.1423818616=${linkedin_link}&entry.2064142506=${q1}&entry.1957804798=${q2}&entry.1202489453=${q3}`;
+        let urlInit = `https://docs.google.com/forms/d/e/1FAIpQLSfo0eMdfNz9TJRD9SpsRb5s3wUF_r54qBSp8DiqBnlQqBjGFw/formResponse?usp=pp_url&entry.1698873613=${email}&entry.1060656156=${name}&entry.1143253914=${mobile}&entry.1156550514=${year}&entry.1553288753=${branch}&entry.1416789219=${positions}&entry.1089965806=${resume_link}&entry.809758529=${cover_link}&entry.887347889=${codechef_link}&entry.903534579=${github_link}&entry.1423818616=${linkedin_link}&entry.2064142506=${q1}&entry.1957804798=${q2}&entry.1202489453=${q3}`;
         let allData = {
             email,
             name,
