@@ -1,26 +1,38 @@
 $(() => {
-
-    $("#year").on('change', () => {
+    $(".posdiv").hide();
+    $("#year").on("change", () => {
         let year = $("#year").val();
-        if (year === 'FY') {
-            $('.sy').hide();
-            $('.coordinator').removeClass('col-sm-offset-5');
+        if (year === "FY") {
+            $(".posdiv").show();
+            $(".sy").hide();
+            $(".coordinator").removeClass("col-sm-offset-5");
+        } else if (year === "SY") {
+            $(".posdiv").show();
+            $(".sy").show();
+            $(".coordinator").addClass("col-sm-offset-5");
         } else {
-            $('.sy').show();
-            $('.coordinator').addClass('col-sm-offset-5');
+            $(".posdiv").hide();
         }
     });
 
-    $("#submitForm").on('click', (e) => {
+    $("#submitForm").on("click", (e) => {
         e.preventDefault();
 
-        swal("Registered Sucessfully", "Your application has been submitted", "success");
+        // swal(
+        //     "Registered Sucessfully",
+        //     "Your application has been submitted",
+        //     "success"
+        // );
 
         let name = $.trim($("#name").val());
         let email = $.trim($("#email").val());
         let mobile = $.trim($("#mobile").val());
+        let year = $.trim($("#year").val());
         let branch = $.trim($("#branch").val());
-        let positions = $.map($("input[name='positions[]']:checked"), function(e, i) {
+        let positions = $.map($("input[name='positions[]']:checked"), function (
+            e,
+            i
+        ) {
             return e.value;
         });
         console.log(positions);
@@ -28,8 +40,8 @@ $(() => {
         let cover_link = $.trim($("#cover").val());
 
         let q1 = $.trim($("#reason").val());
-        let q2 = $.trim($("#hardest_challenge").val());
-        let q3 = $.trim($("#hardest_team").val());
+        let q2 = "";
+        let q3 = "";
 
         let codechef_link = $.trim($("#codechef").val());
         let github_link = $.trim($("#github").val());
@@ -37,15 +49,89 @@ $(() => {
 
         // console.log(branch, role_team, github_link, linkedin_link);
 
-        let url = `docs.google.com/forms/d/e/1FAIpQLSe4dsJ-fveIk-iTZ25cSlzSuFi31sslGXZXECDn8KfVULzrJQ/formResponse?usp=pp_url&entry.1821348361=${name}&entry.1663120441=${email}&entry.609147553=${mobile}&entry.113314376=${branch}&entry.1370152404=${role_team}&entry.1892787611=${resume_link}`;
-        if (github_link) {
-            url = url + `&entry.1245110826=${github_link}`;
+        var $valid = $(".wizard-card form").valid();
+        console.log($valid);
+        if (!$valid) {
+            return false;
         }
-        if (linkedin_link) {
-            url = url + `&entry.1787624373=${linkedin_link}`;
-        }
-        url = url + `&entry.2061758602=${q1}&entry.1973063140=${q2}&entry.1609758082=${q3}&submit=Submit`;
+        $("#submitForm").attr("disabled", true);
+        let urlInit = `https://docs.google.com/forms/d/e/1FAIpQLSfo0eMdfNz9TJRD9SpsRb5s3wUF_r54qBSp8DiqBnlQqBjGFw/viewform?usp=pp_url&entry.1698873613=${email}&entry.1060656156=${name}&entry.1143253914=${mobile}&entry.1156550514=${year}&entry.1553288753=${branch}&entry.1416789219=${positions}&entry.1089965806=${resume_link}&entry.809758529=${cover_link}&entry.887347889=${codechef_link}&entry.903534579=${github_link}&entry.1423818616=${linkedin_link}&entry.2064142506=${q1}&entry.1957804798=${q2}&entry.1202489453=${q3}`;
+        let allData = {
+            email,
+            name,
+            phone: mobile,
+            year,
+            branch,
+            positions,
+            resume: resume_link,
+            cover: cover_link,
+            codechef: codechef_link,
+            github: github_link,
+            linkedin: linkedin_link,
+            q1: q1,
+            q2: q2,
+            q3: q3,
+            url: urlInit,
+        };
+        let url = urlInit + "&submit=Submit";
         console.log(url);
+        fetch("https://cors-anywhere.herokuapp.com/" + url)
+            .then((res) => {
+                if (res.status == 200) {
+                    console.log("success");
+                    fetch(
+                        "https://us-central1-codecell-interviews.cloudfunctions.net/sendMail/",
+                        {
+                            method: "POST",
+                            body: JSON.stringify({
+                                email: email,
+                                data: allData,
+                            }),
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                            mode: "cors",
+                            cache: "no-cache",
+                        }
+                    )
+                        .then((resp) => resp.text())
+                        .then((res) => {
+                            console.log(res);
+                            if (res === "Yayay") {
+                                swal(
+                                    "Registered Sucessfully",
+                                    "Your application has been submitted",
+                                    "success"
+                                );
+                            } else if (res === "Email already exists.") {
+                                swal(
+                                    "Failed to submit",
+                                    "An application has already been submitted for this email",
+                                    "error"
+                                );
+                            } else {
+                                swal(
+                                    "Failed to submit",
+                                    "Something went wrong",
+                                    "error"
+                                );
+                            }
+                        })
+                        .catch(() => {
+                            swal(
+                                "Failed to submit",
+                                "An application has already been submitted for this email",
+                                "error"
+                            );
+                        })
+                        .finally(() => {
+                            $("#submitForm").attr("disabled", false);
+                        });
+                }
+            })
+            .finally(() => {
+                $("#submitForm").attr("disabled", false);
+            });
         // try {
         //     fetch(url, {
         //             method: "POST",
@@ -61,12 +147,7 @@ $(() => {
         // } catch (err) {
         //     console.log(err);
         // }
-        var $valid = $('.wizard-card form').valid();
-        console.log($valid);
-        if (!$valid) {
-            return false;
-        }
-        $("#submitForm").attr("disabled", true);
+
         // $.ajax({
         //     url: 'https://cors-anywhere.herokuapp.com/'+url,
         //     method: 'GET',
