@@ -21,11 +21,11 @@
 
 
 	<!-- Toast -->
-	<link rel="stylesheet" href="assets/css/jquery.toast.min.css">
+	<link rel="stylesheet" href="assets/css/sweetalert.min.css">
 
 	<style>
 		html, body{
-			overflow: hidden;
+			/*overflow: hidden;*/
 		}
 		.form-control {
 			border: 1px solid #c2c2c2 !important;
@@ -43,11 +43,11 @@
 	</head>
 
 	<body>
-	<div style="position: absolute; top: 0; left: 0; height: 130%; width: 100%; background: rgba(0, 0, 0, 0.5); z-index:9999;">
+	<!-- <div style="position: absolute; top: 0; left: 0; height: 130%; width: 100%; background: rgba(0, 0, 0, 0.5); z-index:9999;">
 			<div class="card" style="background: white; height: 300px; width: 80%; margin: auto; top: 45%; position: relative; transform: translateY(-50%); padding: 20px; text-align: center;">
 				<h3>Applications for KJSCE CodeCell 2020-2021 has not started yet</h3>
 			</div>
-	</div>
+	</div> -->
 	<div class="image-container set-full-height" style="background-image: linear-gradient(135deg, rgb(0, 86, 108), rgb(0, 13, 22))">
 	    <!--   Big container   -->
 	    <div class="container">
@@ -129,6 +129,16 @@
 												</div>
 											</div>
 											<div class="col-sm-3 col-sm-offset-1">
+												<div class="form-group">
+													<label>Year</label>
+													<select id="year" class="form-control" name="year" required>
+														<option value="">Select Year</option>
+														<option value="FY">FY</option>
+														<option value="SY">SY</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-sm-3 col-sm-offset-1">
 
 												<div class="form-group">
 													<label>Branch</label>
@@ -145,25 +155,69 @@
 											</div>
 											<div class="col-sm-10 col-sm-offset-1">
 												<div class="form-group">
-													<label>Position Preference <small>(Creative, Tech, Cord)</small> <small>(Required)</small></label>
-													<!-- <select id="role_team" class="form-control" multiple="multiple">
-														<option selected>Select position as per preference</option>
-														<option value="Creative">Creative</option>
-														<option value="Tech">Technical</option>
-														<option value="Cord">Co-ordinate</option>
-													</select> -->
-													<input type="text" id="role_team" class="form-control" placeholder="If multiple, enter position seperated by comma" required>
+													<label>Position Preference <small>(Required)</small></label>
+
+													<div class="form-check form-check-inline d-flex flex-row justify-content-between">
+														<div class="col-sm-5 sy">
+															<input class="form-check-input" type="checkbox" name=
+															"positions[]" value="Committee Head">
+															<label class="form-check-label" for="inlineCheckbox1">Committee Head</label>
+														</div>
+														<div class="col-sm-5">
+															<input class="form-check-input" type="checkbox" name=
+															"positions[]" value="Technical Team">
+															<label class="form-check-label" for="inlineCheckbox1">Technical Team</label>
+														</div>
+														<div class="col-sm-5 sy">
+															<input class="form-check-input" type="checkbox" name=
+															"positions[]" value="Public Relations Head">
+															<label class="form-check-label" for="inlineCheckbox1">Public Relations Head</label>
+														</div>
+														<div class="col-sm-5">
+															<input class="form-check-input" type="checkbox" name=
+															"positions[]" value="Public Relations Team">
+															<label class="form-check-label" for="inlineCheckbox1">Public Relations Team</label>
+														</div>
+														<div class="col-sm-5 sy">
+															<input class="form-check-input" type="checkbox" name=
+															"positions[]" value="Technical Head">
+															<label class="form-check-label" for="inlineCheckbox1">Technical Head</label>
+														</div>
+														<div class="col-sm-5">
+															<input class="form-check-input pl-3" type="checkbox" name=
+															"positions[]" value="Creative Team">
+															<label class="form-check-label" for="inlineCheckbox1">Creative Team</label>
+														</div>
+														<div class="col-sm-offset-5 col-sm-5 coordinator">
+															<input class="form-check-input pl-3" type="checkbox" name=
+															"positions[]" value="Coordinator">
+															<label class="form-check-label" for="inlineCheckbox1">Coordinator</label>
+														</div>
+														
+													</div>
 												</div>
 											</div>
 											<div class="col-sm-10 col-sm-offset-1">
 												<div class="form-group">
-													<label>Resume <small>(Google Drive link)</small><small>(Required)</small></label>
+													<label>Resume <small>(Google Drive - Public link)</small><small>(Required)</small></label>
 													<input type="url" id="resume" name="resume" class="form-control" placeholder="Enter resume link" required>
 												</div>
 											</div>
 											<div class="col-sm-10 col-sm-offset-1">
 												<div class="form-group">
-													<label>GitHub Profile <small>(Required)</small></label>
+													<label>Cover Letter <small>(Google Drive - Public link)</small><small>(Required)</small></label>
+													<input type="url" id="cover" name="cover" class="form-control" placeholder="Enter cover letter link" required>
+												</div>
+											</div>
+											<div class="col-sm-10 col-sm-offset-1">
+												<div class="form-group">
+													<label>Codechef Profile Link <small>(Required)</small></label>
+													<input type="url" id="codechef" class="form-control" placeholder="Enter Codechef profile link" required>
+												</div>
+											</div>
+											<div class="col-sm-10 col-sm-offset-1">
+												<div class="form-group">
+													<label>GitHub Profile <small>(Optional)</small></label>
 													<input type="url" id="github" class="form-control" placeholder="Enter GitHub profile link">
 												</div>
 											</div>
@@ -255,7 +309,7 @@
 	<script src="assets/js/jquery.validate.min.js" type="text/javascript"></script>
 
 	<!-- Toast -->
-	<script src="assets/js/jquery.toast.min.js"></script>
+	<script src="assets/js/sweetalert.min.js"></script>
 
 	<!-- Custom JS -->
 	<script src="assets/js/main.js"></script>
