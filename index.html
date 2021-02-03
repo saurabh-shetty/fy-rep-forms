@@ -25,7 +25,7 @@
 
 	<style>
 		html, body{
-			overflow: hidden;
+			<!-- overflow: auto; -->
 		}
 		.form-control {
 			border: 1px solid #c2c2c2 !important;
@@ -49,11 +49,11 @@
 	</head>
 
 	<body>
-	<div style="position: absolute; top: 0; left: 0; height: 130%; width: 100%; background: rgba(0, 0, 0, 0.5); z-index:9999;">
+	<!-- <div style="position: absolute; top: 0; left: 0; height: 130%; width: 100%; background: rgba(0, 0, 0, 0.5); z-index:9999;">
 			<div class="card" style="background: white; height: 300px; width: 80%; margin: auto; top: 45%; position: relative; transform: translateY(-50%); padding: 20px; text-align: center;">
 				<h3>Application period for KJSCE CodeCell 2020-2021 has ended</h3>
 			</div>
-	</div>
+	</div> -->
 	<div class="image-container set-full-height" style="background-image: linear-gradient(135deg, rgb(0, 86, 108), rgb(0, 13, 22))">
 	    <!--   Big container   -->
 	    <div class="container">
@@ -68,7 +68,7 @@
 		                <!--        You can switch " data-color="orange" "  with one of the next bright colors: "blue", "green", "orange", "red", "azure"          -->
 
 		                    	<div class="wizard-header text-center">
-		                        	<h3 class="wizard-title">Apply for KJSCE CodeCell 2020-2021</h3>
+		                        	<h3 class="wizard-title">Apply for KJSCE CodeCell F.E. Rep 2020-2021</h3>
 		                    	</div>
 
 								<div class="wizard-navigation">
@@ -130,17 +130,17 @@
 											</div>
 											<div class="col-sm-10 col-sm-offset-1">
 												<div class="form-group">
-													<label>Mobile Number</label>
+													<label>Mobile Number <small>(Required)</small></label>
 													<input type="text" id="mobile" name="mobile" class="form-control" placeholder="Enter mobile number" required>
 												</div>
 											</div>
 											<div class="col-sm-3 col-sm-offset-1">
 												<div class="form-group">
-													<label>Year</label>
+													<label>Year <small>(FY Students only)</small></label>
 													<select id="year" class="form-control" name="year" required>
-														<option value="">Select Year</option>
+														<!-- <option value="">Select Year</option> -->
 														<option value="FY">FY</option>
-														<option value="SY">SY</option>
+														<!-- <option value="SY">SY</option> -->
 													</select>
 												</div>
 											</div>
@@ -149,23 +149,23 @@
 												<div class="form-group">
 													<label>Branch</label>
 													<select id="branch" class="form-control" name="branch" required>
-														<option value="">Select Branch</option>
+														<option value="" disabled selected>Select Branch</option>
 														<option value="COMPS">COMPS</option>
 														<option value="IT">IT</option>
-														<option value="ETRX">ETRX</option>
+														<option value="ETRX">Electronics</option>
 														<option value="EXTC">EXTC</option>
 														<option value="MECH">MECH</option>
 													</select>
 													<!-- <input type="text"class="form-control" placeholder="Enter branch" required> -->
 												</div>
 											</div>
-											<div class="col-sm-10 col-sm-offset-1 ">
+											<!-- <div class="col-sm-10 col-sm-offset-1 ">
 												Positions will appear once you select year
 												<br/><br/>
-											</div>
-											<div class="col-sm-10 col-sm-offset-1 posdiv">
+											</div> -->
+											<div class="col-sm-10 col-sm-offset-1 posdiv" style="margin-bottom:10px;">
 												<div class="form-group">
-													<b>Please select <i>at most</i> 3 positions </b><br/><br/>
+													<b>Please select <i>at least</i> 1 position </b><br/>
 													<label>Position Preference <small>(Required)</small></label>
 
 													<div class="form-check form-check-inline d-flex flex-wrap flex-row justify-content-between">
@@ -192,11 +192,11 @@
 																"positions[]" value="Technical Team">
 																<label class="form-check-label" for="inlineCheckbox1">Technical Team</label>
 															</div>
-															<div class="d-flex flex-row justify-content-between">
+															<!-- <div class="d-flex flex-row justify-content-between">
 																<input class="form-check-input" type="checkbox" name=
 																"positions[]" value="Public Relations Team">
 																<label class="form-check-label" for="inlineCheckbox1">Public Relations Team</label>
-															</div>
+															</div> -->
 															<div class="d-flex flex-row justify-content-between">
 																<input class="form-check-input pl-3" type="checkbox" name=
 																"positions[]" value="Creative Team">
@@ -213,13 +213,13 @@
 											</div>
 											<div class="col-sm-10 col-sm-offset-1">
 												<div class="form-group">
-													<label>Resume <small>(Google Drive - Public link)</small><small>(Required)</small></label>
+													<label>Resume <small>(Google Drive - Public link) </small><small>(Required)</small></label>
 													<input type="url" id="resume" name="resume" class="form-control" placeholder="Enter resume link" required>
 												</div>
 											</div>
 											<div class="col-sm-10 col-sm-offset-1">
 												<div class="form-group">
-													<label>Cover Letter <small>(Google Drive - Public link)</small><small>(Required)</small></label>
+													<label>Cover Letter <small>(Google Drive - Public link) </small><small>(Required)</small></label>
 													<input type="url" id="cover" name="cover" class="form-control" placeholder="Enter cover letter link" required>
 												</div>
 											</div>
