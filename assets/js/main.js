@@ -78,8 +78,11 @@ $(() => {
         };
         let url = urlInit + "&submit=Submit";
         console.log(url);
-        fetch("https://cors-anywhere.herokuapp.com/" + url)
-            .then((res) => {
+        fetch("https://test.cors.workers.dev/?" + url, {
+			method:'post'
+		}
+		)
+		.then((res) => {
                 if (res.status == 200) {
                     console.log("success");
                     fetch(
