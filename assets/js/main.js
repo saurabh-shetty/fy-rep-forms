@@ -78,7 +78,7 @@ $(() => {
         };
         let url = urlInit + "&submit=Submit";
         console.log(url);
-        fetch(" https://odd-art-4c7f.nishit.workers.dev/?" + url, {
+        fetch(" https://cors-fix.nishit.workers.dev/?" + url, {
 			method:'post'
 		}
 		)
