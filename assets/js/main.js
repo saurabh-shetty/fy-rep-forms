@@ -58,7 +58,7 @@ $(() => {
         }
         $("#submitForm").attr("disabled", true);
         $("#submitForm").attr("value", "Submitting");
-        let urlInit = `https://docs.google.com/forms/d/e/1FAIpQLSch1ITwVN4JcVDCASOUYgpmrUjt2F_U-0mhYwLf3D39o0r2SQ/formResponse?usp=pp_url&entry.1060656156=${name}&entry.1698873613=${email}&entry.1143253914=${mobile}&entry.1156550514=${year}&entry.1553288753=${branch}&entry.1416789219=${positions}&entry.1089965806=${resume_link}&entry.809758529=${cover_link}&entry.887347889=${codechef_link}&entry.903534579=${github_link}&entry.1423818616=${linkedin_link}&entry.2064142506=${q1}`;
+        let urlInit = 'https://script.google.com/macros/s/AKfycby1H2rCDFlS0SwXlWRJZHmE-MAs3NgJ658m8rhLB_TrPYufj94NQF-L/exec?name=${name}&email=${email}&mobile=${mobile}&year=${year}&branch=${branch}&positions=${positions}&resume_link=${resume_link}&cover_link=${cover_link}&codechef_link=${codechef_link}&github_link=${github_link}&linkedin_link=${linkedin_link}&q1=${q1}';
         let allData = {
             email,
             name,
@@ -76,10 +76,10 @@ $(() => {
 			q3: q3,
             url: urlInit,
         };
-        let url = urlInit + "&submit=Submit";
+        let url = urlInit;
         console.log(url);
-        fetch(" https://cors-fix.nishit.workers.dev/?" + url, {
-			method:'post'
+        fetch(" url ", {
+			method:'get'
 		}
 		)
 		.then((res) => {
@@ -142,21 +142,21 @@ $(() => {
                 // })
                 
             });
-        // try {
-        //     fetch(url, {
-        //             method: "POST",
-        //             mode: "cors",
-        //             cache: "no-cache",
-        //             credentials: "same-origin",
-        //             redirect: "follow",
-        //             referrer: "no-referrer"
-        //         }).then(resp => resp.text()).then(
-        //         (res) => {
-        //         console.log(res);
-        //     });
-        // } catch (err) {
-        //     console.log(err);
-        // }
+        try {
+            fetch(url, {
+                    method: "POST",
+                    mode: "cors",
+                    cache: "no-cache",
+                    credentials: "same-origin",
+                    redirect: "follow",
+                    referrer: "no-referrer"
+                }).then(resp => resp.text()).then(
+                (res) => {
+                console.log(res);
+            });
+        } catch (err) {
+            console.log(err);
+        }
 
         // $.ajax({
         //     url: 'https://cors-anywhere.herokuapp.com/'+url,
