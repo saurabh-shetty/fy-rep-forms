@@ -78,9 +78,9 @@ $(() => {
         };
         let url = urlInit;
         console.log(url);
-        fetch(" url ", {
-			method:'get'
-		}
+        fetch(" url ",{
+            method: "GET",
+        }
 		)
 		.then((res) => {
                 if (res.status == 200) {
@@ -144,7 +144,7 @@ $(() => {
             });
         try {
             fetch(url, {
-                    method: "POST",
+                    method: "GET",
                     mode: "cors",
                     cache: "no-cache",
                     credentials: "same-origin",
