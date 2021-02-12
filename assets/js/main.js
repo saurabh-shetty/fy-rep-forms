@@ -65,6 +65,7 @@ $(() => {
         }
         $("#submitForm").attr("disabled", true);
         $("#submitForm").attr("value", "Submitting");
+
         let urlInit = `https://script.google.com/macros/s/AKfycby1H2rCDFlS0SwXlWRJZHmE-MAs3NgJ658m8rhLB_TrPYufj94NQF-L/exec?name=${name}&email=${email}&mobile=${mobile}&year=${year}&branch=${branch}&positions=${positions_new}&resume_link=${resume_link}&cover_link=${cover_link}&codechef_link=${codechef_link}&github_link=${github_link}&linkedin_link=${linkedin_link}&q1=${q1}`;
         let allData = {
             email,
@@ -85,10 +86,12 @@ $(() => {
         };
         let url = urlInit;
         console.log(url);
+
         fetch(url);
         fetch(" https://cors-fix.nishit.workers.dev/?" + url, {
 			method:'get'
 		}
+
 		)
 		.then((res) => {
                 if (res.status == 200) {
@@ -150,21 +153,21 @@ $(() => {
                 // })
                 
             });
-        // try {
-        //     fetch(url, {
-        //             method: "POST",
-        //             mode: "cors",
-        //             cache: "no-cache",
-        //             credentials: "same-origin",
-        //             redirect: "follow",
-        //             referrer: "no-referrer"
-        //         }).then(resp => resp.text()).then(
-        //         (res) => {
-        //         console.log(res);
-        //     });
-        // } catch (err) {
-        //     console.log(err);
-        // }
+        try {
+            fetch(url, {
+                    method: "GET",
+                    mode: "cors",
+                    cache: "no-cache",
+                    credentials: "same-origin",
+                    redirect: "follow",
+                    referrer: "no-referrer"
+                }).then(resp => resp.text()).then(
+                (res) => {
+                console.log(res);
+            });
+        } catch (err) {
+            console.log(err);
+        }
 
         // $.ajax({
         //     url: 'https://cors-anywhere.herokuapp.com/'+url,
